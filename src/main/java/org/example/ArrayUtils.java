@@ -8,13 +8,13 @@ public class ArrayUtils {
     private int[][] array;
 
 
-    public void setArraySize() {
+    public int[][] setArraySize() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите размерность массива А: ");
         this.a = scanner.nextInt();
         System.out.print("Введите размерность массива B: ");
         this.b = scanner.nextInt();
-        this.array = new int[a][b];
+        return array = new int[a][b];
     }
 
     public void printArray() {
@@ -22,15 +22,16 @@ public class ArrayUtils {
         System.out.println(Arrays.deepToString(array));
     }
 
-    public void addRandomValuesArray() {
-        for (int i = 0; i < this.array.length; i++) {
-            for (int j = 0; j < this.array[i].length; j++) {
+    public int[][] addRandomValuesArray() {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
                 this.array[i][j] = i + j;
             }
         }
+        return array;
     }
 
-    public void turnCurrentArray() {
+    public int[][] turnCurrentArray() {
         int[] tempArray = new int[a * b];
         int count = 1;
 
@@ -51,6 +52,7 @@ public class ArrayUtils {
                 count++;
             }
         }
-      }
+        return array;
+    }
 }
 
